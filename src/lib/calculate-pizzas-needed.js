@@ -3,5 +3,6 @@ export default function calculatePizzasNeeded(
   slicesPerPerson,
   slicesPerPizza = 8,
 ) {
-  return Math.ceil(numberOfPeople * slicesPerPerson / slicesPerPizza);
+  const shouldReturnZero = !numberOfPeople || !slicesPerPerson;
+  return shouldReturnZero ? 0 : Math.ceil(numberOfPeople * slicesPerPerson / slicesPerPizza);
 }
